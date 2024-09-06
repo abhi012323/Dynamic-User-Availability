@@ -1,0 +1,73 @@
+/* Login.css */
+
+/* Container for the login form */
+.container-login {
+    max-width: 500px; /* Adjusted for a more typical maximum width */
+    height: auto; /* Adjusted height to auto for better content fitting */
+    width: 90%; /* Responsive width */
+    margin: 100px auto 0; /* Adds margin to the top for space between navbar and login box */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content */
+}
+
+/* Heading style */
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.75rem;
+    color: #333333;
+}
+
+/* Form control styling */
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+.btn {
+    width: 50%; /* Adjust button width if needed */
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform transition */
+    text-align: center; /* Center text inside button */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Adds a subtle scale effect on hover */
+}
+
+/* Alert styling */
+.alert {
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow for emphasis */
+}
+
+.alert-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+}

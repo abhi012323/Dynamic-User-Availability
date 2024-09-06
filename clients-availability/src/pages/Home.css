@@ -1,0 +1,45 @@
+/* Home.css */
+
+/* Container for the home page */
+.container-home {
+    max-width: 800px; /* Adjusted for a larger container */
+    margin: 50px auto; /* Center container and add vertical margin */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    text-align: center;
+}
+
+/* Heading style */
+h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333333;
+}
+
+/* Input field styling */
+input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    margin-bottom: 20px; /* Space between input and form */
+}
+
+/* Form control styling (for consistency) */
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* Margin-bottom for spacing */
+.mb-3 {
+    margin-bottom: 20px;
+}
