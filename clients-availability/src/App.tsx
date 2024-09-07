@@ -24,6 +24,8 @@ import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
+import './App.css'; // Ensure global styles are imported
+
 
 function App() {
   return (

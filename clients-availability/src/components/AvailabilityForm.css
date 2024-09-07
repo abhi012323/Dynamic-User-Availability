@@ -1,12 +1,10 @@
-/* AvailabilityForm.css */
-
 /* Form container styling */
 form {
     max-width: 600px; /* Adjust as needed */
     margin: 0 auto; /* Center the form */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better depth */
     background-color: #ffffff;
 }
 
@@ -21,6 +19,7 @@ label {
     margin-bottom: 8px;
     font-size: 1rem;
     color: #333333;
+    font-weight: 500; /* Slightly heavier font for better readability */
 }
 
 /* Input fields styling */
@@ -32,6 +31,13 @@ input[type="number"] {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 1rem;
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+input[type="datetime-local"]:focus,
+input[type="number"]:focus {
+    border-color: #0056b3; /* Highlight border on focus */
+    outline: none;
 }
 
 /* Button styling */
@@ -43,12 +49,13 @@ input[type="number"] {
     font-size: 1rem;
     font-weight: bold;
     color: #ffffff;
-    background-color: #007bff;
+    background-color: #4CAF50; /* Updated to a more neutral green */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center; /* Center align text */
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #45a049; /* Slightly darker green for hover */
     transform: scale(1.05); /* Adds a subtle scale effect on hover */
 }

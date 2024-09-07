@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import './AvailabilityForm.css'
+import './AvailabilityForm.css';
 
 interface AvailabilityFormProps {
   user: string; // Expecting the user ID as a string
@@ -10,12 +10,13 @@ function AvailabilityForm({ user }: AvailabilityFormProps) {
   const [start, setStart] = useState('');
   const [end, setEnd] = useState('');
   const [duration, setDuration] = useState(30);
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000'; // Default to localhost if environment variable is not set
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       // Posting availability to the backend API
-      const response = await axios.post('https://clients-availability-1.onrender.com/api/availability', {
+      const response = await axios.post(`${apiUrl}/api/availability`, {
         user,
         start,
         end,

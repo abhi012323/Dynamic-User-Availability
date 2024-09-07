@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import SessionOverview from '../components/SessionOverview';
-import './Admin.css'
+import './Admin.css';
 
 interface User {
   _id: string;
@@ -15,22 +15,25 @@ interface Availability {
 }
 
 function Admin() {
-  // Use proper typing for the states
-  const [users, setUsers] = useState<User[]>([]); // Array of User objects
-  const [selectedUser, setSelectedUser] = useState<User | null>(null); // Nullable User object
-  const [availability, setAvailability] = useState<Availability[]>([]); // Array of Availability objects
+  // Define state for users, selected user, and availability
+  const [users, setUsers] = useState<User[]>([]);
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
+  const [availability, setAvailability] = useState<Availability[]>([]);
 
+  // Get API URL from environment variables
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
+  // Fetch users from your own backend API
   useEffect(() => { 
-    // Fetch users from API and set them
-    axios.get('https://clients-availability-1.onrender.com/api/users')
+    axios.get(`${apiUrl}/api/users`)  // Use the environment variable for the API URL
       .then((response) => setUsers(response.data))
       .catch((error) => console.error('Error fetching users:', error));
-  }, []);
+  }, [apiUrl]);
 
+  // Fetch availability for the selected user from your own backend API
   const fetchAvailability = async (userId: string) => {
     try {
-      // Fetch availability for the selected user
-      const response = await axios.get(`https://clients-availability-1.onrender.com/api/availability/${userId}`);
+      const response = await axios.get(`${apiUrl}/api/availability/${userId}`);  // Use the environment variable for the API URL
       setAvailability(response.data);
     } catch (error) {
       console.error('Error fetching availability:', error);
@@ -62,7 +65,6 @@ function Admin() {
       >
         View Availability
       </button>
-
 
       {availability.length > 0 && <SessionOverview availability={availability} />}
     </div>

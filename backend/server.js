@@ -32,7 +32,7 @@ console.log("Mongo URI from .env:", process.env.MONGO_URI);
 
 // MongoDB connection with your URI
 mongoose
-  .connect(process.env.MONGO_URI || "mongodb+srv://educationhubeduhelp:RWjmwVG551MgkqZB@cluster0.s6vul.mongodb.net/clients?retryWrites=true&w=majority&appName=Cluster0", {
+  .connect(process.env.MONGO_URI || "mongodb+srv://educationhubeduhelp:qazwsx123@cluster0.s6vul.mongodb.net/clients?retryWrites=true&w=majority&appName=Cluster0", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -42,6 +42,7 @@ mongoose
 // Default error handler (optional)
 app.use((err, req, res, next) => {
   console.error(err.stack);
+
   res.status(500).send("Something broke!");
 });
 

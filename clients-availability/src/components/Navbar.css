@@ -1,57 +1,79 @@
-/* Navbar.css */
-
+/* Navbar container styling */
 .navbar {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #eaeaea;
-    padding: 0.5rem 1rem;
-  } 
-  
+  background-color: #f8f9fa; /* Light background color for the navbar */
+  border-bottom: 1px solid #eaeaea; /* Light border for separation */
+  padding: 0.5rem 1rem;
+}
+
+/* Container for centering navbar content */
+.container-navbar {
+  max-width: 1200px;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Brand styling */
+.brand {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007bff; /* Primary brand color */
+  text-decoration: none;
+  text-transform: capitalize; /* Capitalize brand name */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.brand:hover {
+  color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Links container */
+.links {
+  display: flex;
+}
+
+/* Navigation items list */
+.nav-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+/* Individual navigation item */
+.nav-item {
+  margin-left: 1rem; /* Spacing between items */
+}
+
+/* Navigation link styling */
+.nav-link {
+  font-size: 1rem; /* Adjusted font size for better balance */
+  color: #333; /* Dark color for readability */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease; /* Added transition for transform effect */
+  font-weight: 500; /* Medium font weight for better legibility */
+}
+
+.nav-link:hover {
+  color: #007bff; /* Primary color on hover */
+  transform: scale(1.05); /* Subtle scale effect on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
   .container-navbar {
-    max-width: 1200px;
-    height: 60px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      height: auto; /* Allow height to adjust based on content */
   }
-  
-  .brand {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: capitalize;
-  }
-  
-  .brand:hover {
-    color: #0056b3;
-  }
-  
-  .links {
-    display: flex;
-  }
-  
+
   .nav-items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+      flex-direction: column; /* Stack nav items vertically */
   }
-  
+
   .nav-item {
-    margin-left: 1rem;
+      margin-left: 0;
+      margin-bottom: 0.5rem; /* Add space between items when stacked vertically */
   }
-  
-  .nav-link {
-    font-size: 1.5rem;
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-weight: bold;
-  }
-  
-  .nav-link:hover {
-    color: #007bff;
-  }
-  
+}

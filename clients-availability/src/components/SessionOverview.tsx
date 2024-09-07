@@ -14,13 +14,14 @@ interface SessionOverviewProps {
 
 function SessionOverview({ availability }: SessionOverviewProps) {
   const [selectedSlot, setSelectedSlot] = useState<Availability | null>(null); // Typing the selectedSlot state
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000'; // Default to localhost if environment variable is not set
 
   const handleSchedule = async () => {
     if (!selectedSlot) return;
 
     try {
-      // Assuming you have an API endpoint for scheduling sessions
-      const response = await axios.post('https://clients-availability-1.onrender.com/api/schedule', {
+      // Use the correct backend server URL
+      await axios.post(`${apiUrl}/api/schedule`, {
         user: 'Admin', // Replace this with a dynamic user if necessary
         start: selectedSlot.start,
         end: selectedSlot.end,
@@ -36,7 +37,6 @@ function SessionOverview({ availability }: SessionOverviewProps) {
 
   return (
     <div>
-        
       <h1> Available Clients</h1>
       <select
         onChange={(e) => setSelectedSlot(JSON.parse(e.target.value))}
